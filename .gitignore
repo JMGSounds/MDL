@@ -110,6 +110,7 @@ electron/.standalone_output
 src/mesh/TODO
 
 .idea/
+/vendor/
 
 *.iml
 *.test
