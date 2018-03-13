@@ -1,0 +1,11 @@
+<mat-list>
+  <h3 mat-subheader>Addresses</h3>
+  <mat-list-item *ngFor="let address of wallet.entries">
+    <i mat-list-icon (click)="showQr(address)" class="fa fa-qrcode"></i>
+    <h4 mat-line>{{address.address}} - {{ address.balance | sky }} ({{ address.hours ? address.hours : 0 }} Coin Hours)</h4>
+  </mat-list-item>
+  <div class="button-line">
+    <a mat-raised-button color="accent" (click)="renameWallet()">Rename wallet</a>
+    <a mat-raised-button color="accent" (click)="addAddress()">Add address</a>
+  </div>
+</mat-list>

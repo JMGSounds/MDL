@@ -8,13 +8,20 @@ import { WalletsComponent } from './components/pages/wallets/wallets.component';
 import { CreateWalletComponent } from './components/pages/wallets/create-wallet/create-wallet.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SendSkycoinComponent } from './components/pages/send-skycoin/send-skycoin.component';
+import { SkyPipe } from './pipes/sky.pipe';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+// import { HistoryComponent } from './components/pages/history/history.component';
 import { DateFromNowPipe } from './pipes/date-from-now.pipe';
 import { RouterModule } from '@angular/router';
+// import { BreadcrumbComponent } from './components/layout/breadcrumb/breadcrumb.component';
+import { TransactionComponent } from './components/pages/transaction/transaction.component';
+// import { BackButtonComponent } from './components/layout/back-button/back-button.component';
 import { ExplorerComponent } from './components/pages/explorer/explorer.component';
 import { BlockchainService } from './services/blockchain.service';
 import { DateTimePipe } from './pipes/date-time.pipe';
 import { TransactionsAmountPipe } from './pipes/transactions-amount.pipe';
+// import { BlockComponent } from './components/pages/block/block.component';
+// import { AddressComponent } from './components/pages/address/address.component';
 import { PendingTransactionsComponent } from './components/pages/settings/pending-transactions/pending-transactions.component';
 import { OutputsComponent } from './components/pages/settings/outputs/outputs.component';
 import { BlockchainComponent } from './components/pages/settings/blockchain/blockchain.component';
@@ -31,12 +38,12 @@ import { TellerStatusPipe } from './pipes/teller-status.pipe';
 import { HeaderComponent } from './components/layout/header/header.component';
 import { TopBarComponent } from './components/layout/header/top-bar/top-bar.component';
 import { FooterComponent } from './components/layout/footer/footer.component';
-import { PriceService } from './price.service';
+// import { WalletShowComponent } from './components/pages/wallet-show/wallet-show.component';
 import { LoadWalletComponent } from './components/pages/wallets/load-wallet/load-wallet.component';
 import { TransactionListComponent } from './components/pages/transaction-list/transaction-list.component';
 import { TransactionDetailComponent } from './components/pages/transaction-list/transaction-detail/transaction-detail.component';
 import { NavBarComponent } from './components/layout/header/nav-bar/nav-bar.component';
-import { WalletDetailComponent } from './components/pages/wallets/wallet-detail/wallet-detail.component';
+import { WalletDetailComponent } from './components/pages/wallets/address-detail/wallet-detail.component';
 import { ModalComponent } from './components/layout/modal/modal.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -54,7 +61,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
 
@@ -109,9 +116,18 @@ const ROUTES = [
 
 @NgModule({
   declarations: [
+    AppComponent,
+    // HistoryComponent,
+    WalletsComponent,
+    // CreateWalletComponent,
+    // BreadcrumbComponent,
+    // AddressComponent,
+    // PendingTransactionsComponent,
     AddDepositAddressComponent,
     AppComponent,
+    // BackButtonComponent,
     BackupComponent,
+    // BlockComponent,
     BlockchainComponent,
     BuyComponent,
     ButtonComponent,
@@ -128,11 +144,13 @@ const ROUTES = [
     PendingTransactionsComponent,
     QrCodeComponent,
     SendSkycoinComponent,
+    SkyPipe,
     TellerStatusPipe,
     TopBarComponent,
     TransactionDetailComponent,
     TransactionListComponent,
     TransactionsAmountPipe,
+    // WalletShowComponent,
     WalletsComponent,
     NavBarComponent,
     WalletDetailComponent,
@@ -168,7 +186,7 @@ const ROUTES = [
     MatToolbarModule,
     MatTooltipModule,
     NgxDatatableModule,
-    NoopAnimationsModule,
+    BrowserAnimationsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(ROUTES, { useHash: true }),
   ],
@@ -176,7 +194,6 @@ const ROUTES = [
     ApiService,
     BlockchainService,
     NetworkService,
-    PriceService,
     PurchaseService,
     WalletService,
   ],

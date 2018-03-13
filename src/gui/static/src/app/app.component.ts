@@ -1,19 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
+import {MatIconRegistry} from "@angular/material";
 import 'rxjs/add/operator/takeWhile';
-import { ApiService } from './services/api.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
 
-  constructor(
-    private api: ApiService,
-  ) {}
+    constructor(iconRegistry: MatIconRegistry) {
+        iconRegistry
+            .registerFontClassAlias('fontawesome', 'fa')
+            .registerFontClassAlias('mdl', 'mdl-icon');
+    }
 
-  ngOnInit() {
-    this.api.testBackend();
-  }
 }

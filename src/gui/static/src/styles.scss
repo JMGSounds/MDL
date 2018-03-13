@@ -1,56 +1,13 @@
 @import 'theme/_variables';
+@import "theme/_font-open-sans.scss";
 @import '~bootstrap/scss/bootstrap-grid.scss';
-
 /* You can add global styles to this file, and also import other style files */
 //@import '~@angular/material/prebuilt-themes/indigo-pink.css';
 @import 'app/app.theme.scss';
 @import '@swimlane/ngx-datatable/release/themes/material.css';
 
-@font-face {
-  font-family: 'Skycoin';
-  font-style: normal;
-  font-weight: 300;
-  src: url('assets/fonts/skycoin/Skycoin-Light.woff2') format('woff2'),
-  url('assets/fonts/skycoin/Skycoin-Light.woff') format('woff');
-}
-@font-face {
-  font-family: 'Skycoin';
-  font-style: italic;
-  font-weight: 300;
-  src: url('assets/fonts/skycoin/Skycoin-LightItalic.woff2') format('woff2'),
-  url('assets/fonts/skycoin/Skycoin-LightItalic.woff') format('woff');
-}
-@font-face {
-  font-family: 'Skycoin';
-  font-style: normal;
-  font-weight: 400;
-  src: url('assets/fonts/skycoin/Skycoin-Regular.woff2') format('woff2'),
-  url('assets/fonts/skycoin/Skycoin-Regular.woff') format('woff');
-}
-@font-face {
-  font-family: 'Skycoin';
-  font-style: italic;
-  font-weight: 400;
-  src: url('assets/fonts/skycoin/Skycoin-RegularItalic.woff2') format('woff2'),
-  url('assets/fonts/skycoin/Skycoin-RegularItalic.woff') format('woff');
-}
-@font-face {
-  font-family: 'Skycoin';
-  font-style: normal;
-  font-weight: 700;
-  src: url('assets/fonts/skycoin/Skycoin-Bold.woff2') format('woff2'),
-  url('assets/fonts/skycoin/Skycoin-Bold.woff') format('woff');
-}
-@font-face {
-  font-family: 'Skycoin';
-  font-style: italic;
-  font-weight: 700;
-  src: url('assets/fonts/skycoin/Skycoin-BoldItalic.woff2') format('woff2'),
-  url('assets/fonts/skycoin/Skycoin-BoldItalic.woff') format('woff');
-}
-
-$mat-font-family: Skycoin, sans-serif;
-$white: #FBFBFB;
+$mat-font-family: 'Open Sans', sans-serif;
+$white: #FFF;
 
 $primary-color: #0072ff;
 $secondary-color: #ffc125;
@@ -65,21 +22,17 @@ html {
 }
 
 body {
-  background-color: #f7f7f7;
+  background-color: #f8f9fb;
   margin: 0;
   padding: 0;
   height: 100%;
 }
 
-header {
-  background: url("assets/header.png") center center / cover, linear-gradient(-155deg, #686e96 0%, #373b5c 100%);
-  width: 100%;
-  height: 300px;
-}
-
-mat-dialog-container {
-  border-radius: 5px !important;
-}
+//header {
+//  background: url("assets/header.png") center center / cover, linear-gradient(-155deg, #686e96 0%, #373b5c 100%);
+//  width: 100%;
+//  height: 300px;
+//}
 
 .mat-dialog-container {
   padding: 0 !important;
@@ -98,18 +51,14 @@ mat-dialog-container {
   color: white;
 }
 
-.button-line {
-  margin-top: 40px;
-  text-align: right;
-}
-
 .datatable-row-group {
   cursor: pointer;
 }
 
-button.active {
-  background-color: rgba(0,0,0,.12);
-}
+
+//button.active {
+//  background-color: rgba(0, 0, 0, .12);
+//}
 
 mat-spinner.in-button .mat-spinner path {
   stroke: #000;
@@ -140,45 +89,44 @@ mat-panel-title {
 }
 
 .form-field {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 
   label {
-    color: #1e2227;
     display: block;
-    font-size: 13px;
+    font-size: 14px;
     line-height: 20px;
-    margin-bottom: 2px;
+    margin-bottom: 4px;
   }
 
   input {
-    border: 2px solid rgba(0, 0, 0, 0.05);
-    border-radius: 6px;
+    border: 1px solid $grey-silver-light;
+    border-radius: 5px;
     box-sizing: border-box;
     display: block;
     line-height: 20px;
-    padding: 10px 10px;
+    padding: 18px 22px;
     width: 100%;
   }
 
   select {
     background-color: white;
-    border: 2px solid rgba(0, 0, 0, 0.05);
-    border-radius: 6px;
+    border: 1px solid $grey-silver-light;
+    border-radius: 5px;
     box-sizing: border-box;
     display: block;
     line-height: 20px;
-    padding: 10px 10px;
+    padding: 18px 22px;
     width: 100%;
-    -webkit-appearance:none;
+    -webkit-appearance: none;
   }
 
   textarea {
-    border: 2px solid rgba(0, 0, 0, 0.05);
-    border-radius: 6px;
+    border: 1px solid $grey-silver-light;
+    border-radius: 5px;
     box-sizing: border-box;
     display: block;
     line-height: 20px;
-    padding: 10px 10px;
+    padding: 18px 22px;
     width: 100%;
   }
 }
@@ -228,6 +176,49 @@ General Helpers
 }
 
 mat-spinner.in-button svg {
-  height: 24px !important;
-  width: 24px !important;
+  height: 24px;
+  width: 24px;
+}
+
+
+/**
+Overwrite Angular Material Design
+ */
+mat-ink-bar {
+  background: $purple-pink !important;
+}
+
+.mat-expansion-panel {
+  border: 1px solid $grey-silver-light;
+  border-radius: 5px;
+
+  &:not([class*=mat-elevation-z]) {
+    box-shadow: none !important;
+  }
+}
+
+.button-line {
+  margin-top: 32px;
+  text-align: right;
+}
+
+.mat-raised-button  {
+  border-radius: 5px !important;
+  padding: 0 32px !important;
+
+  &:not([class*=mat-elevation-z]) {
+    box-shadow: none !important;
+  }
+
+  .mat-button-wrapper {
+    line-height: 40px;
+  }
+}
+
+
+
+mat-dialog-container {
+  border-radius: 5px !important;
+  box-shadow: none !important;
+  border: 1px solid $grey-silver;
 }
