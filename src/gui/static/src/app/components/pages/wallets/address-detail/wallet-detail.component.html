@@ -1,6 +1,6 @@
 <mat-list>
   <h3 mat-subheader>Addresses</h3>
-  <mat-list-item *ngFor="let address of wallet.entries">
+  <mat-list-item *ngFor="let address of (wallet ? wallet.addresses : []); let i = index">
     <i mat-list-icon (click)="showQr(address)" class="fa fa-qrcode"></i>
     <h4 mat-line>{{address.address}} - {{ address.balance | sky }} ({{ address.hours ? address.hours : 0 }} Coin Hours)</h4>
   </mat-list-item>

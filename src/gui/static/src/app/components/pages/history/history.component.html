@@ -1,6 +1,6 @@
 <ngx-datatable #table
   class="material"
-  [rows]="walletService.history() | async"
+  [rows]="walletService.recent() | async"
   columnMode="flex"
   [headerHeight]="50"
   [footerHeight]="50"

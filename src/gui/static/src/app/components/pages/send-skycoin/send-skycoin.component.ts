@@ -2,6 +2,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {WalletService} from '../../../services/wallet.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {MatSnackBar, MatSnackBarConfig} from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import 'rxjs/add/operator/delay';
 import 'rxjs/add/operator/filter';
 import {ButtonComponent} from '../../layout/button/button.component';
@@ -22,6 +23,7 @@ export class SendSkycoinComponent implements OnInit {
   constructor(
     public formBuilder: FormBuilder,
     public walletService: WalletService,
+    private router: Router,
     private snackbar: MatSnackBar,
   ) {
   }
@@ -34,6 +36,12 @@ export class SendSkycoinComponent implements OnInit {
       .flatMap(() => this.walletService.retrieveUpdatedTransactions(this.transactions))
       .subscribe(transactions => this.records = transactions);
     this.walletService.recent().subscribe(transactions => this.transactions = transactions);
+  }
+
+  onActivate(response) {
+    if (response.row && response.row.txid) {
+      this.router.navigate(['/history', response.row.txid]);
+    }
   }
 
   send() {

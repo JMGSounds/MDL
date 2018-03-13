@@ -6,11 +6,11 @@ import { QrCodeComponent } from '../../../layout/qr-code/qr-code.component';
 import { Wallet } from '../../../../app.datatypes';
 
 @Component({
-  selector: 'app-wallet-detail',
+  selector: 'app-address-detail',
   templateUrl: './wallet-detail.component.html',
   styleUrls: ['./wallet-detail.component.css']
 })
-export class WalletDetailComponent {
+export class AddressDetailComponent {
   @Input() wallet: Wallet;
 
   constructor(
